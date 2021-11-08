@@ -6,9 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
   </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Urbanist&display=swap");
+    body {
+      font-family: "Urbanist", sans-serif;
+    }
+    #signup-form {
+      display: flex;
+      flex-direction: column;
+    }
+    #signup-form > input {
+      height: 50px;
+      font-family: "Urbanist", sans-serif;
+      border: 1px solid white;
+      background-color: papayawhip;
+      font-size: 15px;
+      width: 500px;
+      padding-left: 20px;
+    }
+  </style>
   <body>
+    <h1>Sign-Up</h1>
     <div id="signup">
-      <form></form>
+      <form id="signup-form">
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="E-Mail" />
+        <input type="password" placeholder="Password" />
+        <input type="text" placeholder="Username" />
+        <input type="number" placeholder="Mobile number" />
+        <input type="text" placeholder="Description" />
+      </form>
     </div>
   </body>
 </html>
