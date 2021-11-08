@@ -62,6 +62,7 @@
 
   foods(`https://` + `www.themealdb.com/api/json/v1/1/filter.php?a=Indian`);
 
+  var foodData;
   function showFoods(foods) {
     menu_box.innerHTML = null;
     foods.forEach((el) => {
@@ -81,6 +82,12 @@
 
       div.append(img, name, button, hr);
       menu_box.append(div);
+
+      button.addEventListener(`click`, function () {
+        foodData = el;
+        window.localStorage.setItem(`foodData`, JSON.stringify(foodData));
+        window.location.href = `cart.html`;
+      });
     });
   }
 
