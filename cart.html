@@ -41,6 +41,22 @@
     button.textContent = `Purchase`;
 
     displayPanel.append(img, title, button);
+
+    button.addEventListener(`click`, function () {
+      //   localStorage.removeItem("foodData");
+      setTimeout(function () {
+        alert("Your Order is accepted");
+      }, 3000);
+      setTimeout(function () {
+        alert("Preparing");
+      }, 8000);
+      setTimeout(function () {
+        alert("Your Order is ready");
+      }, 10000);
+      setTimeout(function () {
+        alert("Your Order is out for delivery");
+      }, 12000);
+    });
   }
 
   display(data);
