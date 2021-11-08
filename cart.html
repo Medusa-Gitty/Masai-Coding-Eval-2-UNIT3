@@ -5,6 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Urbanist&display=swap");
+      body {
+        font-family: "Urbanist", sans-serif;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1 onclick="goto()">Foodie</h1>
+    <hr />
+    <div id="display"></div>
+  </body>
 </html>
+<script>
+  var displayPanel = document.getElementById(`display`);
+
+  var data = JSON.parse(window.localStorage.getItem(`foodData`));
+  console.log(data);
+
+  function display(el) {
+    let img = document.createElement(`img`);
+    img.src = el.strMealThumb;
+
+    let title = document.createElement(`p`);
+    title.textContent = el.strMeal;
+
+    let button = document.createElement(`button`);
+    button.textContent = `Purchase`;
+
+    displayPanel.append(img, title, button);
+  }
+
+  display(data);
+</script>
