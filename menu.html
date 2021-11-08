@@ -20,5 +20,17 @@
   </body>
 </html>
 <script>
-  var menu_box = document.getElementById();
+  var menu_box = document.getElementById(`menu_box`);
+
+  async function foods() {
+    let res = await fetch(
+      `www.themealdb.com/api/json/v1/1/search.php?f=a
+`
+    );
+    let data = await res.json();
+
+    console.log(data);
+  }
+
+  foods();
 </script>
