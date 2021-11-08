@@ -24,8 +24,7 @@
 
   async function foods() {
     let res = await fetch(
-      `www.themealdb.com/api/json/v1/1/search.php?f=a
-`
+      `www.themealdb.com/api/json/v1/1/filter.php?a=Canadian`
     );
     let data = await res.json();
 
