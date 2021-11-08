@@ -25,9 +25,10 @@
   async function foods(url) {
     let res = await fetch(url);
     let data = await res.json();
-
-    console.log(data);
-    return data;
+    let foods = data.meals;
+    console.log(foods);
+    showFoods(foods);
+    return foods;
   }
 
   foods(`https://` + `www.themealdb.com/api/json/v1/1/filter.php?a=Indian`);
@@ -47,7 +48,10 @@
       let button = document.createElement(`button`);
       button.textContent = `Add to cart`;
 
-      let hr = document;
+      let hr = document.createElement(`hr`);
+
+      div.append(img, name, button, hr);
+      menu_box.append(div);
     });
   }
 </script>
