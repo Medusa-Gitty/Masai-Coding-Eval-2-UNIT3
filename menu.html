@@ -11,6 +11,20 @@
     body {
       font-family: "Urbanist", sans-serif;
     }
+    #navbar {
+      border: 2px solid gray;
+      height: 40px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    #navbar > button {
+      font-family: "Urbanist", sans-serif;
+      cursor: pointer;
+      border: 1px solid white;
+      background-color: papayawhip;
+      font-size: 15px;
+      width: 100px;
+    }
     #menu_box {
       display: grid;
       grid-template-columns: auto auto auto auto;
@@ -23,6 +37,11 @@
     }
   </style>
   <body>
+    <div id="navbar">
+      <button onclick="home()">Home</button>
+      <button onclick="login()">Login</button>
+      <button onclick="signup()">Sign Up</button>
+    </div>
     <h1>Foodie</h1>
     <hr />
     <h2>Todays playlist of food items ╰(*°▽°*)╯</h2>
@@ -63,5 +82,15 @@
       div.append(img, name, button, hr);
       menu_box.append(div);
     });
+  }
+
+  function home() {
+    window.location.href = `index.html`;
+  }
+  function signup() {
+    window.location.href = `signup.html`;
+  }
+  function login() {
+    window.location.href = `login.html`;
   }
 </script>
