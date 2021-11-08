@@ -22,18 +22,14 @@
 <script>
   var menu_box = document.getElementById(`menu_box`);
 
-  //   async function foods() {
-  //     let res = await fetch(
-  //       `www.themealdb.com/api/json/v1/1/filter.php?a=Canadian`
-  //     );
-  //     let data = await res.json();
+  async function foods() {
+    let res = await fetch(
+      `www.themealdb.com/api/json/v1/1/filter.php?a=Canadian`
+    );
+    let data = await res.json();
 
-  //     console.log(data);
-  //   }
+    console.log(data);
+  }
 
-  fetch(`www.themealdb.com/api/json/v1/1/filter.php?a=Canadian`).then(function (
-    res
-  ) {
-    console.log(res);
-  });
+  foods();
 </script>
