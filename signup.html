@@ -63,9 +63,12 @@
       },
     })
       .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
         console.log(res);
         let msg = res.message;
-        console.log(res);
+        console.log(msg);
       })
       .catch((err) => {
         console.log(err);
