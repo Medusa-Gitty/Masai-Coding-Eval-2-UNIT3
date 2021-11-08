@@ -28,14 +28,30 @@
   <body>
     <h1>Sign-Up</h1>
     <div id="signup">
-      <form id="signup-form">
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="E-Mail" />
-        <input type="password" placeholder="Password" />
-        <input type="text" placeholder="Username" />
-        <input type="number" placeholder="Mobile number" />
-        <input type="text" placeholder="Description" />
+      <form id="signup-form" onsubmit="signup(event)">
+        <input type="text" id="name" placeholder="Name" />
+        <input type="email" id="email" placeholder="E-Mail" />
+        <input type="password" id="password" placeholder="Password" />
+        <input type="text" id="username" placeholder="Username" />
+        <input type="number" id="mobile" placeholder="Mobile number" />
+        <input type="text" id="description" placeholder="Description" />
+        <input type="submit" />
       </form>
     </div>
   </body>
 </html>
+<script>
+  function signup(e) {
+    e.preventDefault();
+    let form = document.getElementById(`signup-form`);
+    // console.log(form);
+    let user_data = {
+      name: form.name.value,
+      email: form.email.value,
+      password: form.password.value,
+      username: form.username.value,
+      mobile: form.mobile.value,
+      description: form.description.value,
+    };
+  }
+</script>
