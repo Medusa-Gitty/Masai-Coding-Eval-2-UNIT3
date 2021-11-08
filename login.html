@@ -11,6 +11,20 @@
     body {
       font-family: "Urbanist", sans-serif;
     }
+    #navbar {
+      border: 2px solid gray;
+      height: 40px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    #navbar > button {
+      font-family: "Urbanist", sans-serif;
+      cursor: pointer;
+      border: 1px solid white;
+      background-color: papayawhip;
+      font-size: 15px;
+      width: 100px;
+    }
     #login-form {
       display: flex;
       flex-direction: column;
@@ -26,6 +40,11 @@
     }
   </style>
   <body>
+    <div id="navbar">
+      <button onclick="home()">Home</button>
+      <button onclick="menu()">Menu</button>
+      <button onclick="signup()">Sign Up</button>
+    </div>
     <h1>Log In</h1>
     <div id="login">
       <form id="login-form" onsubmit="login(event)">
@@ -34,9 +53,11 @@
         <input type="submit" />
       </form>
     </div>
+    <div id="result"></div>
   </body>
 </html>
 <script>
+  let result = document.getElementById(`result`);
   function login(e) {
     e.preventDefault();
     let form = document.getElementById(`login-form`);
@@ -59,10 +80,25 @@
       })
       .then((res) => {
         let token = res.token;
-        // console.log(token);
+        if (token == undefined) {
+          result.textContent = `Not Correct Credentials`;
+        } else {
+          result.textContent = `Logged in successfully`;
+        }
+        console.log(token);
       })
       .catch((err) => {
         console.log(err);
       });
+  }
+
+  function home() {
+    window.location.href = `index.html`;
+  }
+  function signup() {
+    window.location.href = `signup.html`;
+  }
+  function menu() {
+    window.location.href = `menu.html`;
   }
 </script>

@@ -11,6 +11,20 @@
     body {
       font-family: "Urbanist", sans-serif;
     }
+    #navbar {
+      border: 2px solid gray;
+      height: 40px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    #navbar > button {
+      font-family: "Urbanist", sans-serif;
+      cursor: pointer;
+      border: 1px solid white;
+      background-color: papayawhip;
+      font-size: 15px;
+      width: 100px;
+    }
     #signup-form {
       display: flex;
       flex-direction: column;
@@ -26,6 +40,11 @@
     }
   </style>
   <body>
+    <div id="navbar">
+      <button onclick="home()">Home</button>
+      <button onclick="menu()">Menu</button>
+      <button onclick="login()">Log In</button>
+    </div>
     <h1>Sign-Up</h1>
     <div id="signup">
       <form id="signup-form" onsubmit="signup(event)">
@@ -76,5 +95,15 @@
       .catch((err) => {
         // console.log(err);
       });
+  }
+
+  function home() {
+    window.location.href = `index.html`;
+  }
+  function menu() {
+    window.location.href = `menu.html`;
+  }
+  function login() {
+    window.location.href = `login.html`;
   }
 </script>
